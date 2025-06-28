@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue des livres réservés</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f5f9ff url('background.jpg') repeat;
+    }
+    header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #025626;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #025626;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #025626;
+      color: white;
+    }
+    #clock {
+      color: #025626;
+      font-weight: bold;
+    }
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    #formulaire {
+            display: none;
+            margin-top: 10px;
+        }
+    #formulaire label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+    #formulaire input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .bouton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #025626;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-uac.png" alt="Logo UAC">
+    <nav>
+      <a href="Accueil.html">Accueil</a>
+      <a href="Tableau_de_bord.html">Dashboard</a>
+      <a href="Ajout_livre.html">Ajouter un livre</a>
+      <span id="clock"></span>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Catalogue des livres réservés</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Titre</th>
+          <th>Auteur</th>
+          <th>Édition</th>
+          <th>Étudiant</th>
+          <th>Matricule</th>
+          <th>Date de demande</th>
+        </tr>
+      </thead>
+      <tbody id="livreTable">
+        <tr>
+          <td>Introduction au Droit</td>
+          <td>H. Kpoton</td>
+          <td>2020</td>
+          <td>Yao Adja</td>
+          <td>UAC12345</td>
+          <td>2025-05-07</td>
+        </tr>
+        <!-- Autres lignes dynamiquement -->
+      </tbody>
+    </table>
+  </main>
+  <div style="text-align: center;">
+    <button onclick="document.getElementById('formulaire').style.display = 'block';" class="bouton">
+     Ajouter une réservation
+    </button>
+  </div>
+  
+
+<!-- Formulaire caché au départ -->
+<main id="formulaire">
+    <form action="codereservation.php" method="post">
+        <label>Titre du livre :</label><br>
+        <input type="text" name="titre"><br>
+
+        <label>Auteur :</label><br>
+        <input type="text" name="auteur"><br>
+
+        <label>Edition :</label><br>
+        <input type="text" name="edition"><br>
+
+        <label>Nom de l'étudiant :</label><br>
+        <input type="text" name="nom"><br>
+
+        <label>Matricule :</label><br>
+        <input type="text" name="matricule"><br>
+
+        <label>Date de demande :</label><br>
+        <input type="text" name="date"><br>
+
+        <button type="submit" name="btn" class="bouton">Valider</button>
+    </main>
+</div>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString("fr-FR");
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
+
+

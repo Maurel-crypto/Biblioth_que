@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord - FADESP</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f5f9ff url('background.jpg') repeat;
+    }
+    header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #025626;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #025626;
+    }
+    .stat {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .box {
+      width: 200px;
+      height: 120px;
+      background-color: #025626;
+      color: white;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+    .box h3 {
+      margin: 0;
+      font-size: 30px;
+    }
+    .box p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    #clock {
+      color: #025626;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-uac.png" alt="Logo UAC">
+    <nav>
+      <a href="Accueil.html">Tableau de bord</a>
+      <a href="Entrer.php">Entrées</a>
+      <a href="Ajout_livre.php">Livres</a>
+      <a href="Hist.php">Historiques</a>
+      <a href="Accueil.html">déconnexion</a>
+      <span id="clock"></span>
+    </nav>
+  </header>
+  
+  <main>
+    <h2>Tableau de bord de la bibliothèque</h2>
+    <div class="stat">
+      <div class="box">
+        <h3>54</h3>
+        <p>Étudiants aujourd’hui</p>
+      </div>
+      <div class="box">
+        <h3>112</h3>
+        <p>Livres en stock</p>
+      </div>
+      <div class="box">
+        <h3>8</h3>
+        <p>Demandes de livres</p>
+      </div>
+      <div class="box">
+        <h3>30</h3>
+        <p>Livres réservés</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString("fr-FR");
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+  
+</body>
+</html>

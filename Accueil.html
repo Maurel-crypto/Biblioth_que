@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bibliothèque FADESP - UAC</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f9ff url('background.jpg') repeat;
+      background-size: cover;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      height: 70px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #004f2d;
+      font-weight: 600;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 30px;
+      background: linear-gradient(to right, #ffffffee, #f1fdf1ee);
+      height: 28.3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #007c3f;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .hero button {
+      background-color: #007c3f;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #005e2f;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #e8f5e9;
+    }
+
+    #clock {
+      font-weight: bold;
+      color: #007c3f;
+    }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div>
+    <img src="./logo-uac.png" alt="Logo UAC" style="height: 150px;">
+  </div>
+  <h1>Bienvenue à la Bibliothèque de la FADESP</h1>
+  <p>Réservée uniquement aux étudiants de l’Université d’Abomey-Calavi</p>
+  <button onclick="window.location.href='connexion'">Accéder à la Bibliothèque</button>
+</section>
+
+
+
+<script>
+  // Affichage de l'heure automatique
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('fr-FR');
+    document.getElementById('clock').textContent = time;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+</body>
+<footer class="footer">
+  &copy; 2025 Université d’Abomey-Calavi | Bibliothèque FADESP
+</footer>
+</html>
